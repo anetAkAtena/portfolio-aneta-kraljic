@@ -100,4 +100,36 @@ figmaContainer
     .attr("href", d => d.link)
     .html(d => `<img src="${d.image}" alt="Figma project">`);
 
-  
+const projects = [
+		{ title: "Red room", description: "3D Model - Blender", date: "2022", img: "assets/img/replika.png" },
+		{ title: "Spider", description: "3D Model - Blender, polygonal modeling technique", date: "2022", img: "assets/img/pauk1.0.png" },
+		{ title: "Lollipops", description: "Animation - Blender, creative coding(Python) ", date: "2022", img: "assets/img/lizalice1.png" },
+		{ title: "Astrum", description: "Figma Prototype - Click to view!", date: "2023", img: "assets/img/plavi_logo 1.png" },
+		{ title: "FIDIT+", description: "Figma Prototype - Click to view!", date: "2023", img: "assets/img/welcome.png" },
+		{ title: "Hotel Nala", description: "Figma Prototype - Click to view!", date: "2022", img: "assets/img/Prvi zaslon_nala.png" },
+	];
+	
+const tooltip = d3.select('body').append('div')
+    .attr('class', 'tooltip')
+    .style('position', 'absolute')
+    .style('background', '#fff')
+    .style('padding', '10px')
+    .style('border', '1px solid #ccc')
+    .style('border-radius', '5px')
+    .style('box-shadow', '0 4px 6px rgba(0,0,0,0.1)')
+    .style('display', 'none');
+
+d3.selectAll('.work__img img')
+    .data(projects)
+    .on('mouseover', function(event, d) {
+        tooltip.style('display', 'block')
+            .html(`<strong>${d.title}</strong><br>${d.description}<br>Date: ${d.date}`);
+    })
+    .on('mousemove', function(event) {
+        tooltip.style('left', `${event.pageX + 10}px`)
+            .style('top', `${event.pageY + 10}px`);
+    })
+    .on('mouseout', function() {
+        tooltip.style('display', 'none');
+    });
+	
