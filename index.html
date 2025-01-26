@@ -37,6 +37,7 @@
                         <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
                         <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                         <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+			<li class="nav__item"><a href="#auth" class="nav__link">Google Analytics</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                     </ul>
                 </div>
@@ -178,7 +179,22 @@
 				</div>
 			</div>
 		</section>
-		
+		 <!--===== AUTH SECTION =====-->
+        <section class="auth section" id="auth">
+            <h2 class="section-title">Google Analytics</h2>
+
+            <div class="auth__container bd-grid">
+                <button id="signin-button" class="button">Sign In with Google</button>
+                <button id="signout-button" class="button">Sign Out</button>
+            </div>
+            <!-- Canvas za graf -->
+            <canvas id="chart"></canvas>
+
+            <div id="recommendations" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                <h2>Preporučene stranice</h2>
+                <ul id="recommendations-list"></ul>
+            </div>
+        </section>
 		  
             <!--===== CONTACT =====-->
             <section class="contact section" id="contact">
@@ -207,10 +223,20 @@
         </footer>
 
 
-        <!--===== SCROLL REVEAL =====-->
-        <script src="https://unpkg.com/scrollreveal"></script>
+         <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Google API -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
+    
+    <!-- auth.js: Definicija funkcija za autentifikaciju -->
+    <script src="assets/js/analytics.js"></script>
+    <script src="assets/js/auth.js"></script>
+	    
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/recommendations.js"></script>
+    <script src="assets/js/app.js"></script>
     </body>
 </html>
