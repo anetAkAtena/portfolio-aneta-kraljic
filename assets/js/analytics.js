@@ -1,13 +1,15 @@
 async function fetchAnalyticsData() {
-    const response = await gapi.client.analyticsdata.properties.runReport({
-        property: "properties/474803553",
-        requestBody: {
-            dateRanges: [{ startDate: "30daysAgo", endDate: "today" }],
-            dimensions: [{ name: "country" }, { name: "deviceCategory" }, { name: "pagePath" }],
-            metrics: [{ name: "activeUsers" }, { name: "sessions" }, { name: "averageSessionDuration" }]
+// Umjesto stvarnog dohvaćanja podataka, koristimo simulirane podatke
+    const response = {
+        result: {
+            rows: [
+                { dimensionValues: [{ value: 'HR' }, { value: 'desktop' }, { value: '/home' }], metricValues: [{ value: '100' }, { value: '150' }, { value: '1200' }] },
+                { dimensionValues: [{ value: 'US' }, { value: 'mobile' }, { value: '/about' }], metricValues: [{ value: '200' }, { value: '300' }, { value: '1400' }] },
+                { dimensionValues: [{ value: 'DE' }, { value: 'tablet' }, { value: '/work' }], metricValues: [{ value: '50' }, { value: '70' }, { value: '1100' }] }
+            ]
         }
-    });
-    console.log(response.result);
+    };
+    console.log(response.result);  // Ispisujemo u konzolu za provjeru
 
     // Pretvori podatke u format koji može koristiti Chart.js
     const data = {
