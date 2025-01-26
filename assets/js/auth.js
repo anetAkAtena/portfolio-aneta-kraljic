@@ -6,9 +6,11 @@ const SCOPES = "https://www.googleapis.com/auth/analytics.readonly";
 function handleAuthClick() {
  gapi.auth2.getAuthInstance().signIn().then(() => {
     console.log("Uspješno ste se prijavili!");
-    fetchAnalyticsData();  // Pozivanje funkcije za dohvat podataka
-   // Preusmjeravanje na specifičan dio stranice
-    window.location.hash = "#auth"; // Ovo će preusmjeriti na #auth
+    window.onload = function() {
+    fetchAnalyticsData();
+};
+ 
+    
 });
 }
 function handleSignoutClick() {
