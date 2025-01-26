@@ -132,4 +132,7 @@ d3.selectAll('.work__img img')
     .on('mouseout', function() {
         tooltip.style('display', 'none');
     });
-	
+
+document.getElementById("signin-button").addEventListener("click", handleAuthClick);
+document.getElementById("signout-button").addEventListener("click", handleSignoutClick);
+    	
