@@ -18,9 +18,9 @@ function renderChart(data) {
 document.addEventListener("DOMContentLoaded", () => {
     let userHistory = [1, 0, 1, 1]; // Simulirani podaci o korisniku
     let pages = [
-    { name: "/home", vector: [1, 1, 0, 1] },
-    { name: "/about", vector: [0, 1, 1, 0] },
-    { name: "/work", vector: [1, 0, 1, 1] }
+    { name: "#home", vector: [1, 1, 0, 1] },
+    { name: "#about", vector: [0, 1, 1, 0] },
+    { name: "#work", vector: [1, 0, 1, 1] }
     ];
     let recommendations = getRecommendations(userHistory, pages);
     displayRecommendations(recommendations);
