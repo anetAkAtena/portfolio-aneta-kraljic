@@ -3,9 +3,9 @@ async function fetchAnalyticsData() {
     const response = {
         result: {
             rows: [
-                { dimensionValues: [{ value: 'HR' }, { value: 'desktop' }, { value: '/home' }], metricValues: [{ value: '100' }, { value: '150' }, { value: '1200' }] },
-                { dimensionValues: [{ value: 'US' }, { value: 'mobile' }, { value: '/about' }], metricValues: [{ value: '200' }, { value: '300' }, { value: '1400' }] },
-                { dimensionValues: [{ value: 'DE' }, { value: 'tablet' }, { value: '/work' }], metricValues: [{ value: '50' }, { value: '70' }, { value: '1100' }] }
+                { dimensionValues: [{ value: 'HR' }, { value: 'desktop' }, { value: '#home' }], metricValues: [{ value: '100' }, { value: '150' }, { value: '1200' }] },
+                { dimensionValues: [{ value: 'US' }, { value: 'mobile' }, { value: '#about' }], metricValues: [{ value: '200' }, { value: '300' }, { value: '1400' }] },
+                { dimensionValues: [{ value: 'DE' }, { value: 'tablet' }, { value: '#work' }], metricValues: [{ value: '50' }, { value: '70' }, { value: '1100' }] }
             ]
         }
     };
